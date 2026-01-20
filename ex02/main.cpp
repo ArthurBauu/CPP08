@@ -6,16 +6,18 @@ int main() {
 	std::cout << "=== Test with MutantStack ===" << std::endl;
 	{
 		MutantStack<int> mstack;
-		
+		std::cout << "adding 5 and 17 to the stack" << std::endl;
 		mstack.push(5);
 		mstack.push(17);
+		std::cout << "Size: " << mstack.size() << std::endl;
+
+		std::cout << "\nUsing top to know the top element : " << mstack.top() << std::endl;
 		
-		std::cout << "Top: " << mstack.top() << std::endl;
-		
+		std::cout << "\nUsing pop to remove the top element : " << std::endl;
 		mstack.pop();
-		
 		std::cout << "Size: " << mstack.size() << std::endl;
 		
+		std::cout << "adding 3, 5, 737 and 0 to the stack" << std::endl;
 		mstack.push(3);
 		mstack.push(5);
 		mstack.push(737);
@@ -23,9 +25,8 @@ int main() {
 		
 		MutantStack<int>::iterator it = mstack.begin();
 		MutantStack<int>::iterator ite = mstack.end();
-		
 		++it;
-		--it;
+		--it; //semble inutile mais le code crasherais si la stack n'était pas itérable
 		
 		std::cout << "Elements:" << std::endl;
 		while (it != ite) {

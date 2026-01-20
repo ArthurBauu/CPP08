@@ -2,6 +2,9 @@
 
 #include <stack>
 #include <deque>
+#include <iterator>
+
+// deque = double-ended queue (c'est le conteneur par défaut pour std::stack)
 
 template <typename T>
 class MutantStack : public std::stack<T> {

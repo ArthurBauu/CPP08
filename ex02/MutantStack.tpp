@@ -20,9 +20,12 @@ MutantStack<T>::~MutantStack() {}
 
 template <typename T>
 typename MutantStack<T>::iterator MutantStack<T>::begin() {
-	return this->c.begin();
+	return this->c.begin(); 
 }
 
+// ici on delegue l'opération au conteneur sous-jacent en utilisant 'this->c'
+// c'est ce qui permet d'accéder au conteneur protégé 'c' de std::stack
+// et ce qui rend la classe MutantStack itérable (on acesse aux begin() et end() du conteneur sous-jacent)
 
 template <typename T>
 typename MutantStack<T>::iterator MutantStack<T>::end() {
